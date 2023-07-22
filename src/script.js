@@ -46,7 +46,7 @@ let librarys = L.geoJSON(library,{
 
 //駐輪場位置
 let cycle_icon =L.icon({
-    iconUrl: 'https://zisyuu.com/wp-content/uploads/map/assets/cycle.png',
+    iconUrl: './assets/cycle.png',
     iconSize: [21, 21],
     iconAnchor: [10.5, 10.5]
 })
@@ -102,7 +102,7 @@ let lc = L.control.locate({
         alert('現在地が見つかりません');
     },
     markerStyle:{
-        iconURL:'/assets/test.gif'
+        iconURL:'./assets/test.gif'
     }
     /*onLocationOutsideMapBounds(){
         alert('あなたは新丸子にいないよ！');
@@ -113,7 +113,7 @@ let lc = L.control.locate({
 //ダイアログプラグインーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     var options = {
         title:'としょかんマップ',
-        content:'<h3><u>はじめに</u></h3><p>このサイトは個人が作った<b>としょかんMAP</b>です。図書館と付近の駐輪場（※図書館に付随するものがあるかは図書館にお問い合わせください）の情報を載せてみました。<br>ご意見やお問い合わせは<a href="https://forms.gle/r18wQ3vw3DVHAHyh9">こちら</a>からお願いします。</p><h3><u>使い方</u></h3><p>①このダイアログを読み終えたら右下の<b>OKボタンを押してください</b>。<br>②位置情報許可のポップアップが表示されるので、許可すると現在地まで飛んでいきます。<br><h3><u>各ボタンの説明</u></h3><p><img src="https://zisyuu.com/wp-content/uploads/map/assets/layers.png">　表示情報を選ぶ<br><img src="https://zisyuu.com/wp-content/uploads/map/assets/location-arrow.png">　現在地を表示',
+        content:'<h3><u>はじめに</u></h3><p>このサイトは個人が作った<b>としょかんMAP</b>です。図書館と付近の駐輪場（※図書館に付随するものがあるかは図書館にお問い合わせください）の情報を載せてみました。<br>ご意見やお問い合わせは<a href="https://forms.gle/r18wQ3vw3DVHAHyh9">こちら</a>からお願いします。</p><h3><u>使い方</u></h3><p>①このダイアログを読み終えたら右下の<b>OKボタンを押してください</b>。<br>②位置情報許可のポップアップが表示されるので、許可すると現在地まで飛んでいきます。<br><h3><u>各ボタンの説明</u></h3><p><img src="./map/assets/layers.png">　表示情報を選ぶ<br><img src="./assets/location-arrow.png">　現在地を表示',
         modal: true,
         position:'center',
         closeButton:false
