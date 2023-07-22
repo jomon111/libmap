@@ -63,22 +63,40 @@ let cycles = L.geoJSON(cycle,{
     attribution: "<a href='｜<a href='https://www.seikatubunka.metro.tokyo.lg.jp/tomin_anzen/kotsu/jitensha/seisaku-jyourei/churinjou/'>東京都生活文化スポーツ局</a>のデータを編集"
 });
 
+//PR位置
+let prs = L.geoJSON(pr,{
+    onEachFeature: function(feature, layer){
+        layer.bindPopup('[PR]<br/>月額2200円から利用できるコワーキングスペース「<a href="https://px.a8.net/svt/ejp?a8mat=3HOOWG+QSJRU+4GHI+BW8O2&a8ejpredirect=https%3A%2F%2Fbizcomfort.jp%2Ftokyo%2F'+ feature.properties.urltag + '.html" rel="nofollow">' + feature.properties.名称 +'</a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=3HOOWG+QSJRU+4GHI+BW8O2" alt="">」');
+    },
+    pointToLayer: function (feature, coordinates) {
+        return L.marker(coordinates, {icon:
+            L.AwesomeMarkers.icon({
+                icon: 'fa-star',
+                markerColor: 'green',
+                prefix: 'fa',
+            })
+        })
+    },
+    attribution: "<a href='https://catalog.data.metro.tokyo.lg.jp/dataset/t000021d2000000019'>東京都教育庁</a>のデータを編集"
+});
+
 //オーバレイ
 let overLayers = {
     "図書館": librarys,
-    "駐輪場": cycles
+    "駐輪場": cycles,
+    "PR": prs
 };
 
 //マップのオプションたち
 let mymap = L.map('map',{
     center:[35.68559087530657, 139.76015645053045],
-    zoom:16,
+    zoom:14,
     maxZoom:19,
     //minZoom:15,
     //maxBounds: area,
     preferCanvas:true,
     zoomControl:true,
-    layers:[gsi_awai,librarys,cycles],
+    layers:[gsi_awai,librarys,cycles,prs],
     condensedAttributionControl: false
 });
 
