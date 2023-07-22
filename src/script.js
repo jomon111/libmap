@@ -72,7 +72,7 @@ let overLayers = {
 //マップのオプションたち
 let mymap = L.map('map',{
     center:[35.68559087530657, 139.76015645053045],
-    zoom:15,
+    zoom:16,
     maxZoom:19,
     //minZoom:15,
     //maxBounds: area,
